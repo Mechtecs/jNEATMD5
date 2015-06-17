@@ -10,7 +10,7 @@
 	  
 		 Neat.initbase();
 	  
-		 String nome = "c:\\jneat\\dati\\parametri";
+		 String nome = "parametri";
 		 String nomeA = null;
 		 String nomeB = null;
 	  

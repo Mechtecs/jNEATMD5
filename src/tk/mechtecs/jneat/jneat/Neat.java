@@ -152,7 +152,7 @@ import tk.mechtecs.jneat.jneatcommon.IOseq;
    
 	   public static String getDescription(String xkey) {
 		 try {
-			Class c = Class.forName("jneat.Neat");
+			Class c = Class.forName("tk.mechtecs.jneat.jneat.Neat");
 			Field f = c.getField("d_" + xkey);
 			return (String) f.get(c);
 		 } 
@@ -261,7 +261,7 @@ import tk.mechtecs.jneat.jneatcommon.IOseq;
 	  
 		 try {
 		 
-			Class c = Class.forName("jneat.Neat");
+			Class c = Class.forName("tk.mechtecs.jneat.jneat.Neat");
 			Field[] fieldlist = c.getDeclaredFields();
 		 
 			for (int i = 0; i < fieldlist.length; i++) {
@@ -306,7 +306,7 @@ import tk.mechtecs.jneat.jneatcommon.IOseq;
 		 
 		 {
 			try {
-			   Class c = Class.forName("jneat.Neat");
+			   Class c = Class.forName("tk.mechtecs.jneat.jneat.Neat");
 			   Field[] fieldlist = c.getDeclaredFields();
 			
 			   int number_params = fieldlist.length /2;
@@ -365,7 +365,7 @@ import tk.mechtecs.jneat.jneatcommon.IOseq;
 		 int j = 0;
 	  
 		 try {
-			Class c = Class.forName("jneat.Neat");
+			Class c = Class.forName("tk.mechtecs.jneat.jneat.Neat");
 			Field[] fieldlist = c.getDeclaredFields();
 		 
 			int number_params = fieldlist.length / 2;
@@ -409,7 +409,7 @@ import tk.mechtecs.jneat.jneatcommon.IOseq;
 	  
 		 for (int j = 0; j < _model.data.size(); j++) {
 			try {
-			   Class c = Class.forName("jneat.Neat");
+			   Class c = Class.forName("tk.mechtecs.jneat.jneat.Neat");
 			   ParamValue ox = (ParamValue) _model.data.elementAt(j);
 			
 			   Object k =  _model.getValueAt(j,0);
