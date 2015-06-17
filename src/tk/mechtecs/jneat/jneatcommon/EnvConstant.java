@@ -14,7 +14,7 @@ public class EnvConstant {
 	public static String OS_VERSION = " ";
 
 	// current directory
-	public static String JNEAT_DIR = "c:\\jneat\\dati ";
+	public static String JNEAT_DIR = "\\tk\\mechtecs\\jneat\\gui";
 
 	// current file name for parameter single without dir o other)
 	public static String NAME_PARAMETER = "parametri";
@@ -52,7 +52,7 @@ public class EnvConstant {
 
 	//   public static String NAME_CURR_POPULATION = "xxx";
 
-	public static String CLASS_FITNESS = "xxxxx";
+	public static String CLASS_FITNESS = "tk.mechtecs.xor.xor_fit";
 	// if true can permit the compile a class....
 	public static String CURRENT_CLASS = "xxx";
 	public static String DATA_INP = "datain";

@@ -83,9 +83,9 @@ import tk.mechtecs.jneat.log.HistoryLog;
    
    
    
-	  Vector    v1_fitness; 
-	  Vector    v1_fitness_win; 
-	  Vector    v1_species; 
+	  Vector<Double>    v1_fitness; 
+	  Vector<Double>    v1_fitness_win; 
+	  Vector<Double>    v1_species; 
    
    
    
@@ -120,20 +120,20 @@ import tk.mechtecs.jneat.log.HistoryLog;
 	  JSplitPane paneSplit2;
    
    // dynamic definition for fitness
-	  Class  Class_fit;
+	  Class<?>  Class_fit;
 	  Object ObjClass_fit;
 	  Method Method_fit;
 	  Object ObjRet_fit;
    
    
    // dynamic definition for input class
-	  Class  Class_inp;
+	  Class<?>  Class_inp;
 	  Object ObjClass_inp;
 	  Method Method_inp;
 	  Object ObjRet_inp;
    
    // dynamic definition for target class
-	  Class  Class_tgt;
+	  Class<?>  Class_tgt;
 	  Object ObjClass_tgt;
 	  Method Method_tgt;
 	  Object ObjRet_tgt;
@@ -668,8 +668,8 @@ public void itemStateChanged(ItemEvent e) {
 		 {
 		 
 		 
-		 
-			Class_fit = Class.forName(EnvConstant.CLASS_FITNESS);
+			System.out.println("Häx: "+EnvConstant.CLASS_FITNESS);
+			Class_fit = Class.forName("tk.mechtecs.xor.xor_fit");
 			ObjClass_fit = Class_fit.newInstance();
 		 
 		 // read max Fitness possible		
@@ -1385,9 +1385,9 @@ public void itemStateChanged(ItemEvent e) {
 	  
 		 if (generation == 1) 
 		 {
-			v1_fitness_win = new Vector(1, 0);
-			v1_fitness = new Vector(1, 0);
-			v1_species = new Vector(1, 0);
+			v1_fitness_win = new Vector<Double>(1, 0);
+			v1_fitness = new Vector<Double>(1, 0);
+			v1_species = new Vector<Double>(1, 0);
 		 }
 	  
 	  
@@ -1397,7 +1397,7 @@ public void itemStateChanged(ItemEvent e) {
 		 // Evaluate each organism if exist the winner.........
 		 // flag and store only the first winner
 		 
-			Iterator itr_organism;
+			Iterator<?> itr_organism;
 			itr_organism = pop.organisms.iterator();
 			double max_fitness_of_winner = 0.0;
 		 
@@ -1431,7 +1431,7 @@ public void itemStateChanged(ItemEvent e) {
 			}
 		 
 		 //compute average and max fitness for each species
-			Iterator itr_specie;
+			Iterator<?> itr_specie;
 			itr_specie = pop.species.iterator();
 			while (itr_specie.hasNext()) 
 			{
@@ -1736,7 +1736,7 @@ public void itemStateChanged(ItemEvent e) {
 	  
 	  
 		 code xcodew = null;
-		 Iterator _itr = null;
+		 Iterator<Double> _itr = null;
 	  
 		 mappa_curve.setScale(p3.getWidth(), p3.getHeight());
 		 mappa_curve.setAxis(" time of epoch's"," Level fitness / Level winner fitness / #species ");
@@ -1765,7 +1765,7 @@ public void itemStateChanged(ItemEvent e) {
 		 double _x2 = 0.0;
 		 double _y2 = 0.0;
 	  
-		 Iterator itr_fit = v1_fitness.iterator();
+		 Iterator<Double> itr_fit = v1_fitness.iterator();
 		 boolean first_time = true;
 		 while (itr_fit.hasNext()) 
 		 {
@@ -1923,7 +1923,7 @@ public void itemStateChanged(ItemEvent e) {
 	  
 		 Genome _g1 = _o1.genome;
 	  
-		 Vector v1 = new Vector(1, 0);
+		 Vector<code> v1 = new Vector<code>(1, 0);
 		 Structure sx = new Structure();
 	  
 		 _mappa.initAzioni();
@@ -1942,7 +1942,7 @@ public void itemStateChanged(ItemEvent e) {
 	  
 	  
 	  
-		 Iterator itr_point = sx.vVertex.iterator();
+		 Iterator<?> itr_point = sx.vVertex.iterator();
 		 while (itr_point.hasNext()) 
 		 {
 			Vertex _point = ((Vertex) itr_point.next());
@@ -1955,7 +1955,7 @@ public void itemStateChanged(ItemEvent e) {
 		 }
 	  
 	  // store edge for interpreter
-		 Iterator itr_edge = sx.vEdge.iterator();
+		 Iterator<?> itr_edge = sx.vEdge.iterator();
 		 while (itr_edge.hasNext()) 
 		 {
 			Edge _edge = ((Edge) itr_edge.next());
@@ -2029,9 +2029,9 @@ public void itemStateChanged(ItemEvent e) {
 		 p3_curve.repaint();
 	  
 		 p3.removeAll();
-		 v1_fitness_win = new Vector(1, 0);
-		 v1_fitness = new Vector(1, 0);
-		 v1_species = new Vector(1, 0);
+		 v1_fitness_win = new Vector<Double>(1, 0);
+		 v1_fitness = new Vector<Double>(1, 0);
+		 v1_species = new Vector<Double>(1, 0);
 	  
 	  }
    

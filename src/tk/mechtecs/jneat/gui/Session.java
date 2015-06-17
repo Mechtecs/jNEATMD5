@@ -171,6 +171,8 @@ import tk.mechtecs.jneat.log.HistoryLog;
 	   
 	  final static String[] initFitness = 
 	  {
+		 "package tk.mechtecs.xor;\n", 
+		 "\n",
 		 "public class xor_fit { \n",
 		 " \n",
 		 "  public static double getMaxFitness() { return Math.pow (4.0, 2); } \n", 
@@ -202,6 +204,8 @@ import tk.mechtecs.jneat.log.HistoryLog;
    
 	  final static String[] initDataClassInput = 
 	  {
+		 "package tk.mechtecs.xor;\n", 
+		 "\n",
 		 "public class bin_inp {\n", 
 		 " \n", 
 		 "   public static int getNumSamples() { return 4; } \n", 
@@ -242,6 +246,8 @@ import tk.mechtecs.jneat.log.HistoryLog;
    
 	  final static String[] initDataClassOutput = 
 	  {
+		 "package tk.mechtecs.xor;\n", 
+		 "\n",
 		 "public class xor_out {\n",
 		 " \n",
 		 "   public static int getNumUnit() { return 1; } \n", 
@@ -654,13 +660,13 @@ import tk.mechtecs.jneat.log.HistoryLog;
 		 {
 			logger.sendToStatus("wait....");
 			EnvConstant.EDIT_STATUS = 0;
-			nomef = EnvRoutine.getJneatSession();
+			nomef = EnvConstant.NAME_SESSION;
 			logger.sendToLog(" session: wait loading -> "+nomef);
 			StringTokenizer st;
 			String xline;
-			IOseq xFile;
+			IOseq_stream xFile;
 		 
-			xFile = new IOseq(nomef);
+			xFile = new IOseq_stream(nomef);
 			boolean rc = xFile.IOseqOpenR();
 			if (rc) 
 			{

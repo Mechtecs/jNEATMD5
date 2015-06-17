@@ -1,11 +1,11 @@
-   package tk.mechtecs.jneat.jneatcommon;
+   package tk.mechtecs.jneat.gui;
 
    import java.util.*;
 //import java.lang.*;
 //import java.text.*;
 import java.io.*;
 
-																public class IOseq {
+																public class IOseq_stream {
    
 	  private String NomeFile;
 	  private FileWriter fW;
@@ -41,7 +41,7 @@ import java.io.*;
    /**
    * jSeqFile constructor comment.
    */
-	   public IOseq() {
+	   public IOseq_stream() {
 	  
 		 NomeFile = "Logxxxx.txt";
 		 fW = null;
@@ -52,7 +52,7 @@ import java.io.*;
 		 bR = null;
 	  }                                                   
    
-	   public IOseq(String xNome) {
+	   public IOseq_stream(String xNome) {
 		 NomeFile = xNome;
 		 fW = null;
 		 bW = null;
@@ -112,8 +112,8 @@ import java.io.*;
    
 	   public boolean IOseqOpenR() {
 		 try { 
-			 fR = getClass().getResourceAsStream(NomeFile);
-				bR = new BufferedReader(new InputStreamReader(fR));
+			fR = getClass().getResourceAsStream(NomeFile);
+			bR = new BufferedReader(new InputStreamReader(fR));
 		 } 
 			 catch (Exception evt) {
 //			   System.out.println("Error in jSeqOpenR : " + evt);
